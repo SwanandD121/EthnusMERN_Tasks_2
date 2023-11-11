@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 3</title>
+    <link rel="icon" href="favicon.ico.png">
+    <style>
+        body{
+            text-align: center;
+        }
+        img{
+            height: 40px;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1{
+            text-align: center;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1> <img src="multiply.png" alt=""> or <img src="division.png" alt=""> 2 Numbers</h1>
+    <label for="num1">Enter the first number:</label>
+    <input type="text" id="num1">
+    <br>
+    <br>
+    <label for="num2">Enter the second number:</label>
+    <input type="text" id="num2">
+    <br>
+    <br>
+    <button onclick="multiplyNumbers()">Multiply</button>
+    <button onclick="divideNumbers()">Divide</button>
+    <br>
+    <br>
+    <p id="result"></p>
+
+    <script>
+        function multiplyNumbers() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var result = num1 * num2;
+            document.getElementById('result').innerHTML = 'Result: ' + result;
+        }
+
+        function divideNumbers() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            if (num2 !== 0) {
+                var result = num1 / num2;
+                document.getElementById('result').innerHTML = 'Result: ' + result;
+            } else {
+                document.getElementById('result').innerHTML = 'Cannot divide by zero';
+            }
+        }
+    </script>
+</body>
+</html>

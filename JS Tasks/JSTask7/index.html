@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 7</title>
+    <link rel="icon" href="favicon.ico.png">
+    <link rel="stylesheet" type="" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <img src="train.png" class="train" alt="">
+        <p>Click the following buttons to handle animation.</p>
+        <div class="buttons">
+            <button id="startButton">Start</button>
+            <button id="stopButton">Stop</button>
+        </div>
+    </div>
+
+    <script>
+        const train = document.querySelector('.train');
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
+
+        let animationInterval;
+
+        startButton.addEventListener('click', () => {
+            train.style.animationPlayState = 'running';
+            animationInterval = setInterval(() => {
+            train.style.animation = 'none';
+            setTimeout(() => {
+              train.style.animation = 'runTrain 5s linear infinite';
+            }, 10);
+          }, 20000);
+        });
+
+        stopButton.addEventListener('click', () => {
+            train.style.animationPlayState = 'paused';
+            clearInterval(animationInterval);
+        });
+    </script>
+
+    </body>
+</html>

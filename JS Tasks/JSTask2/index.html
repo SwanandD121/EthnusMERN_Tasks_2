@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 2</title>
+    <link rel="icon" href="favicon.ico.png">
+</head>
+<body style="text-align: center;">
+    <h1>Sort a String in Ascending Order</h1>
+    <p>Enter a string to sort its letters alphabetically:</p>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button onclick="sortString()">Sort</button>
+    <p>Sorted string: <span id="sortedString"></span></p>
+
+    <script>
+        function sortString() {
+            const inputElement = document.getElementById("inputString");
+            const sortedStringElement = document.getElementById("sortedString");
+            
+            const inputString = inputElement.value;
+            const sortedString = inputString.split('').sort().join('');
+
+            sortedStringElement.textContent = sortedString;
+        }
+    </script>
+</body>
+</html>

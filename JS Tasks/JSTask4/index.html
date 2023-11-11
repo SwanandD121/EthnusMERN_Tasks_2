@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 4</title>
+    <link rel="icon" href="favicon.ico.png">
+</head>
+<body style="text-align: center;">
+    <button id="showDateButton">Show Date</button>
+    <p id="output1"></p>
+    <button id="showTimeButton">Show Time</button>
+    <p id="output2"></p>
+
+    <script>
+        document.getElementById('showDateButton').addEventListener('click', function() {
+            var date = new Date();
+            var formattedDate = date.toDateString();
+            document.getElementById('output1').textContent = 'Date: ' + formattedDate;
+        });
+
+        document.getElementById('showTimeButton').addEventListener('click', function() {
+            var date = new Date();
+            var formattedTime = date.toLocaleTimeString('en-US', { hour12: false, timeZoneName: 'long' });
+            document.getElementById('output2').textContent = 'Time: ' + formattedTime;
+        });
+    </script>
+</body>
+</html>
